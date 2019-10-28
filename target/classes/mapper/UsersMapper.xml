@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.cjp.dao.UsersDao">
+
+       <insert id="insertUser" >
+           insert into sys_users (id,username,password,salt)
+           values
+           (#{id},#{username},#{password},#{salt})
+       </insert>
+
+    <select id="selectUsersByName"  resultType="cn.cjp.entity.Users">
+        select username,password from sys_users where username = #{username}
+    </select>
+</mapper>
